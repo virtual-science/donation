@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Login to donation' /}
+
+<nav class="ui menu">
+  <a class="ui item" href="/">Home</a> 
+  <a class="item" href="/signup"> Sign Up</a>
+  <a class="ui active item" href="/login"> Login</a>
+   <a class="item" href="/donation"> Make Donation</a>
+    <a class="item" href="/report"> Report</a>
+    <a class="item" href="/logout"> Log Out</a>
+</nav> 
+
+<section class="ui form segment">
+	<form action="/authenticate" method="POST">
+	  <div class="field">
+	    <label> Email: </label>
+	    <input type="text" name="email">
+	  </div>  
+	  <div class="field">
+	    <label>  Password: </label>
+	    <input type="password" name="password">
+	  </div>
+	  <button class="ui blue submit button">Login</button>
+	</form>
+</section>
