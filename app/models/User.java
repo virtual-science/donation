@@ -36,7 +36,11 @@ public class User extends Model
     this.password  = password;
   }
   
-  public static User findByEmail(String email)
+  public User(String firstName2, String lastName2, String email2, String password2) {
+	// TODO Auto-generated constructor stub
+}
+
+public static User findByEmail(String email)
   {
     return find("email", email).first();
   }

@@ -12,9 +12,15 @@ public class Accounts extends Controller {
 		render();
 	}
 
-	public static void register(User user) {
+	public static void register(String firstName, String lastName, String email, String password)
+
+	{
+		Logger.info(firstName + " " + lastName + " " + email + " " + password);
+
+		User user = new User(firstName, lastName, email, password);
 		user.save();
-		login();
+		Welcome.index();
+
 	}
 
 	public static void login() {
@@ -26,30 +32,19 @@ public class Accounts extends Controller {
 		Welcome.index();
 	}
 
-	public static void authenticate(String email, String password) 
-	{
+	public static void authenticate(String email, String password) {
 		Logger.info("Attempting to authenticate with " + email + ":" + password);
-	
+
 		User user = User.findByEmail(email);
-		if((user != null) && (user.checkPassword(password) == true))
-		{
+		if ((user != null) && (user.checkPassword(password) == true)) {
 			Logger.info("Successfully authentication of " + user.firstName);
 			session.put("logged_in_userid", user.id);
-	     	DonationController.index();
+			DonationController.index();
+		} else {
+			Logger.info("Authentication failed");
+			login();
 		}
-		else
-		{
-		Logger.info("Authentication failed");
-		login();
-		}
-		
+
 	}
 
-	public static User getCurrentUser() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
-
-		
-		
