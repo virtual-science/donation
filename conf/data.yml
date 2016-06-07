@@ -33,3 +33,28 @@ User(bart):
     email: bart@simpson.com
     password: secret
     usaCitizen: TRUE
+    
+Donation(1):
+    methodDonated: paypal
+    received: 1000
+    from_id: 1
+    
+Donation(2):
+    methodDonated: paypal
+    received: 1000
+    from_id: 1
+    
+Donation(3):
+    methodDonated: paypal
+    received: 1000
+    from_id: 1
+    
+Donation(4):
+    methodDonated: direct
+    received: 100
+    from_id: 4
+    
+Donation(5):
+    methodDonated: direct
+    received: 100
+    from_id: 2

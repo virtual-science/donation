@@ -10,14 +10,15 @@ public class Donation extends Model
 {
 public long received;
 public String methodDonated;
+public long from_id;
 
-//@ManyToOne
-//public User from;
 
-public Donation(User from, long received, String methodDonated)
+
+public Donation(long from_id, long received, String methodDonated)
 {
 this.received = received;
 this.methodDonated = methodDonated;
+this.from_id = from_id;
 
 }
 }
