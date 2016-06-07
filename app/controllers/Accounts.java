@@ -1,10 +1,9 @@
 package controllers;
+import javax.persistence.Entity;
 
 import play.*;
 import play.mvc.*;
-
 import java.util.*;
-
 import models.*;
 
 public class Accounts extends Controller {
@@ -12,15 +11,17 @@ public class Accounts extends Controller {
 		render();
 	}
 
-	public static void register(String firstName, String lastName, String email, String password)
-
+	public static void signup(User user)
 	{
-		Logger.info(firstName + " " + lastName + " " + email + " " + password);
-
-		User user = new User(firstName, lastName, email, password);
+		Logger.info(user.firstName + " " + user.lastName + " " + user.email + " " + user.password);
 		user.save();
-		Welcome.index();
-
+		login();
+	}
+	
+	public static void register (User user)
+	{
+		user.save();
+		login();
 	}
 
 	public static void login() {

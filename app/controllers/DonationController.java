@@ -1,11 +1,13 @@
 package controllers;
 
-public class DonationController  
-{
+import play.Logger;
+import play.mvc.Controller;
 
-	public static void index() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+public class DonationController extends Controller {
+
+    public static void index() {
+    	Logger.info("got to controller");
+        render();
+    }
+
 }

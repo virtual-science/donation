@@ -11,8 +11,9 @@ GET     /                                       Welcome.index
 GET     /signup									Accounts.signup
 GET     /login                                  Accounts.login
 GET     /logout                                 Accounts.logout
-POST   /authenticate                            Accounts.authenticate
-POST   /register                                Accounts.register
+POST    /authenticate                           Accounts.authenticate
+POST    /signup                                 Accounts.signup
+POST    /register                               Accounts.register
 
 
 # Donation page
