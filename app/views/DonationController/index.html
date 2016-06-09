@@ -1,17 +1,51 @@
-#{extends 'main.html' /}
-#{set title:'Welcome' /}
-
-
-<nav class="ui blue menu">
-  <a class="item" href="/">Home</a> 
-  <a class="item" href="/signup"> Sign Up</a>
-  <a class="item" href="/login"> Login</a>
-   <a class="active item" href="/donation"> Make Donation</a>
-    <a class="item" href="/logout"> Log Out</a>
-</nav> 
-
-<h1>Welcome </h1>
-<h2>Please give generously<h2>
-
-
-
+#{extends 'main.html' /} #{set title:'Donation Request' /}
+  <nav class="ui menu">
+    <a class="ui item" href="/">Home</a>
+    <a class="ui item" href="/signup">Sign Up</a>
+    <a class="ui item" href="/login">Log In</a>
+    <a class="ui active item" href="/donation">Make Donation</a>
+    <a class="ui item" href="/donation/report">Report</a>
+    <a class="ui item" href="/logout">Log Out</a>
+  </nav>
+<section class="ui segment">
+  <h3>Welcome ${user.firstName}</h3>
+  Please give generously
+  <form class="ui form" action="/donation/donate" method="POST">
+    <div class="ui four column grid">
+      <div class="column">
+      
+   
+     <select name= "amountDonated">
+     <option value="0">Amount</option>
+     <option value="100">$100</option>
+     <option value="500">$500</option>
+     <option value="1000">$1000</option>
+         
+     </select>
+        
+      </div>
+      
+      <div class="column">
+        <div class="grouped inline fields">
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input id="paypal" name="methodDonated" value="paypal" checked="checked" type="radio"> 
+              <label for="paypal"><i class="paypal card large icon"></i>PayPal</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input id="direct" name="methodDonated" value="direct" type="radio"> 
+              <label for="direct"><i class="visa large icon"></i>Direct</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+    <button class="ui blue submit button" class = Submit >Donate <i class="add icon"></i></button>
+    </p>
+    <div class="ui error message"></div>
+  </form>
+   
+</div>
