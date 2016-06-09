@@ -1,13 +1,13 @@
 
 package controllers;
-import java.util.Date;
+
 import java.util.Collections;
 import java.util.List;
 import models.Donation;
 import models.User;
 import play.Logger;
 import play.mvc.Controller;
-import utils.DonationDateComparator;
+
 public class DonationController extends Controller 
 {
 	  public static void index()
@@ -54,7 +54,7 @@ public class DonationController extends Controller
      */
     private static void addDonation(User user, long amountDonated,String methodDonated) 
     {
-        Donation bal = new Donation (amountDonated, amountDonated, methodDonated);
+        Donation bal = new Donation (user, amountDonated, methodDonated);
         bal.save();
     }
     
@@ -90,8 +90,6 @@ public class DonationController extends Controller
 	public static void renderReport()
 	{
 	  List<Donation> donations = Donation.findAll();
-	  Collections.shuffle(donations);
-	  Collections.sort(donations, new DonationDateComparator());
-	  render(donations);
+	   render(donations);
 	}
 }

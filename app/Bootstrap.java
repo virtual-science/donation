@@ -11,9 +11,10 @@ import play.test.*;
 @OnApplicationStart
 public class Bootstrap extends Job 
 { 
-  public void doJob() throws FileNotFoundException
-  {
-    //Fixtures.deleteDatabase();
+  public void doJob() {
+	  
+	  
+    Fixtures.deleteDatabase();
     Fixtures.loadModels("data.yml");
    }
 }

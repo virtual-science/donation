@@ -12,16 +12,17 @@ public class Donation extends Model
 {
 public long received;
 public String methodDonated;
-public long from_id;
-public Date dateDonated;
+
+@ManyToOne
+public User from;
 
 
 
-public Donation(long from_id, long received, String methodDonated)
+
+public Donation(User from, long received, String methodDonated)
 {
 this.received = received;
 this.methodDonated = methodDonated;
-this.from_id = from_id;
-this.dateDonated = new Date();
+this.from = from;
 }
 }

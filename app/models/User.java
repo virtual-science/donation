@@ -22,8 +22,8 @@ public class User extends Model
   public String email;
   public String password;
   
- // @OneToMany(mappedBy = "from_id") 
-//  public List<Donation> donations = new ArrayList<Donation>();
+ @OneToMany(mappedBy = "from") 
+ public List<Donation> donations = new ArrayList<Donation>();
 
   
   public User(boolean usaCitizen, String firstName, String lastName, String email, String password)

@@ -9,7 +9,7 @@
   </nav>
 <section class="ui segment">
   <h3>Welcome ${user.firstName}</h3>
-  Please give generously
+  <h5>Please give generously
   <form class="ui form" action="/donation/donate" method="POST">
     <div class="ui four column grid">
       <div class="column">
@@ -47,5 +47,12 @@
     </p>
     <div class="ui error message"></div>
   </form>
-   
+  <div class="ui segment">
+    <h4 class="ui header">Amount target achieved ${progress}</h4>
+    
+    <div class="ui teal progress"  >
+  <div class="bar" style="width: ${progress}" >
+    
+  </div>
+ 
 </div>
