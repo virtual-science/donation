@@ -10,21 +10,17 @@
 <section class="ui segment">
   <h3>Welcome ${user.firstName}</h3>
   <h5>Please give generously
-  <form class="ui form" action="/donation/donate" method="POST">
+  <form class="ui form" action="/DonationController/donate" method="POST"></form>
     <div class="ui four column grid">
       <div class="column">
-      
-   
-     <select name= "amountDonated">
+      <select name= "amountDonated">
      <option value="0">Amount</option>
      <option value="100">$100</option>
      <option value="500">$500</option>
      <option value="1000">$1000</option>
-         
-     </select>
-        
+    </select>
       </div>
-      
+            
       <div class="column">
         <div class="grouped inline fields">
           <div class="field">
@@ -42,13 +38,13 @@
         </div>
       </div>
     </div>
-    <p>
+    
     <button class="ui blue submit button" class = Submit >Donate <i class="add icon"></i></button>
-    </p>
+    
     <div class="ui error message"></div>
   </form>
   <div class="ui segment">
-    <h4 class="ui header">Amount target achieved ${progress}</h4>
+    <h4 class="ui header">Amount target achieved ${progress}%</h4>
     
     <div class="ui teal progress"  >
   <div class="bar" style="width: ${progress}" >
